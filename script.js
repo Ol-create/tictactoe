@@ -31,6 +31,7 @@ function cellClicked() {
   }
 
   updateCell(this, cellIndex); 
+  changePlayer();
   checkWinner();
 }
 function updateCell(cell, index) {
@@ -38,7 +39,8 @@ function updateCell(cell, index) {
   cell.textContent = currentPlayer;
 }
 function changePlayer(){
-
+  currentPlayer = (currentPlayer == "X") ? "O" : "X";
+  statusText.textContent = `${currentPlayer}'s turn`
 }
 function checkWinner() {
 
